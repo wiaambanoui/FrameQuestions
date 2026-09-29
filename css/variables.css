@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* Color Palette - Dark Premium Theme */
+    --bg-darker: #090d16;
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --bg-card-hover: #334155;
+    
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    
+    /* Neon accents */
+    --accent-blue: #00d8ff;
+    --accent-blue-glow: rgba(0, 216, 255, 0.15);
+    
+    /* Framework Accent Colors (Defaulting to React Cyan initially, then overriden by world theme classes) */
+    --theme-color: #00d8ff;
+    --theme-color-glow: rgba(0, 216, 255, 0.15);
+    
+    /* Specific Framework Colors */
+    --color-react: #00d8ff;
+    --color-react-glow: rgba(0, 216, 255, 0.15);
+    --color-vue: #42b883;
+    --color-vue-glow: rgba(66, 184, 131, 0.15);
+    --color-angular: #dd0031;
+    --color-angular-glow: rgba(221, 0, 49, 0.15);
+    --color-node: #5fa04e;
+    --color-node-glow: rgba(95, 160, 78, 0.15);
+
+    /* Game State Colors */
+    --color-correct: #10b981;
+    --color-correct-glow: rgba(16, 185, 129, 0.15);
+    --color-incorrect: #ef4444;
+    --color-incorrect-glow: rgba(239, 68, 68, 0.15);
+    --color-warning: #f59e0b;
+
+    /* Fonts */
+    --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'Fira Code', 'Courier New', Courier, monospace;
+
+    /* Spacing & Borders */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 28px;
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 15px var(--theme-color-glow);
+
+    /* Sidebar/Navbar layout */
+    --btn-primary-fg: #090d16;
+    --header-bg: rgba(15, 23, 42, 0.8);
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --chip-bg: rgba(255, 255, 255, 0.04);
+    --header-height: 72px;
+    --content-max-width: 1200px;
+}
+
+/* Theme modifier classes applied to body */
+body.theme-react {
+    --theme-color: var(--color-react);
+    --theme-color-glow: var(--color-react-glow);
+}
+
+body.theme-vue {
+    --theme-color: var(--color-vue);
+    --theme-color-glow: var(--color-vue-glow);
+}
+
+body.theme-angular {
+    --theme-color: var(--color-angular);
+    --theme-color-glow: var(--color-angular-glow);
+}
+
+body.theme-node {
+    --theme-color: var(--color-node);
+    --theme-color-glow: var(--color-node-glow);
+}
+

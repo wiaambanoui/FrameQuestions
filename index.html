@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrameQuest - Apprenez les Frameworks JS par le Jeu</title>
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+    
+    <meta name="description" content="FrameQuest - Une plateforme éducative gamifiée interactive pour apprendre React, Vue, Angular et Node.js sous forme de quêtes avec feedback immédiat.">
+    <meta name="keywords" content="React, Vue, Angular, Node.js, JavaScript, Tutoriel, Apprendre, Gamification, Programmation, Front-end">
+    
+    <meta property="og:title" content="FrameQuest - Apprenez les Frameworks JS par le Jeu">
+    <meta property="og:description" content="Maîtrisez React, Vue, Angular et Node.js à travers des défis ludiques de code à trous, QCM, debugging et mini-projets.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/logo.svg">
+    
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body class="appearance-dark">
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo-link" id="header-logo-nav" aria-label="Retourner au tableau de bord FrameQuest">
+                <img src="img/logo.svg" alt="Logo FrameQuest" class="logo-img" width="40" height="40">
+                <span class="logo-text">FrameQuest</span>
+            </a>
+            
+            <div class="header-player-stats" aria-label="Statistiques du joueur">
+                <div class="lang-switch" role="group" aria-label="Language">
+                    <button type="button" class="pref-chip is-active" id="btn-lang-fr" data-lang="fr">FR</button>
+                    <button type="button" class="pref-chip" id="btn-lang-en" data-lang="en">EN</button>
+                </div>
+                <button type="button" class="btn-help" id="btn-appearance" title="Thème" aria-label="Changer le thème">🌙</button>
+                <button type="button" class="btn-help" id="btn-help" title="Comment jouer" aria-label="Ouvrir le guide Comment jouer">?</button>
+                <div class="player-level-badge" id="player-level-badge" title="Votre niveau de joueur actuel">1</div>
+                <div class="player-xp-summary">
+                    <div class="player-xp-label">
+                        <span>XP</span>
+                        <span>
+                            <span id="player-xp-value">0</span> / <span id="player-xp-next">1000</span>
+                        </span>
+                    </div>
+                    <div class="progress-container" title="Barre d'expérience vers le prochain niveau">
+                        <div class="progress-bar-fill" id="header-progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="view-root" aria-live="polite">
+        <noscript>
+            <div style="padding: 2rem; text-align: center;">
+                <h2>JavaScript required / JavaScript requis</h2>
+                <p>FrameQuest needs JavaScript enabled. Activez JavaScript pour jouer.</p>
+            </div>
+        </noscript>
+    </main>
+
+    <footer>
+        <p id="app-footer">FrameQuest &copy; 2026 - Livrable de Projet de Stage. Conçu et codé en HTML5/CSS3/ES6 Vanilla.</p>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

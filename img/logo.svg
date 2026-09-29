@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logo FrameQuest">
+  <defs>
+    <linearGradient id="crystal" x1="12" y1="4" x2="52" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#67e8f9"/>
+      <stop offset="55%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <polygon points="32,3 58,24 32,61 6,24" fill="url(#crystal)"/>
+  <polygon points="32,10 50,24 32,52 14,24" fill="#ecfeff" opacity="0.22"/>
+  <text x="32" y="38" text-anchor="middle" fill="#0f172a" font-family="Consolas, 'Courier New', monospace" font-size="13" font-weight="700">&lt;/&gt;</text>
+</svg>

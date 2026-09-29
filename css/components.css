@@ -1,0 +1,335 @@
+/* Buttons */
+.btn {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--theme-color);
+    color: var(--btn-primary-fg);
+    box-shadow: 0 4px 14px var(--theme-color-glow);
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--theme-color-glow), 0 0 12px var(--theme-color);
+    background-color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-primary);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Progress Bars */
+.progress-container {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-sm);
+    height: 10px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--theme-color);
+    box-shadow: 0 0 10px var(--theme-color);
+    width: 0%;
+    transition: width var(--transition-slow);
+}
+
+/* Badges CSS */
+.badge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.badge-card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 0.75rem;
+    text-align: center;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.badge-card.locked {
+    opacity: 0.4;
+    filter: grayscale(1);
+}
+
+.badge-card.unlocked {
+    border-color: var(--theme-color);
+    box-shadow: 0 4px 20px var(--theme-color-glow);
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.03) 0%, rgba(30, 41, 59, 0.5) 100%);
+    animation: badge-unlock-pulse 2s infinite alternate;
+}
+
+.badge-icon-wrapper {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+    transition: transform var(--transition-normal);
+}
+
+.badge-card.unlocked:hover .badge-icon-wrapper {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.badge-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.badge-desc {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+/* Cards & Layout helpers */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Modal and Popups */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(9, 13, 22, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-normal);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: var(--bg-card);
+    border: 2px solid var(--theme-color);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: var(--shadow-lg), 0 0 30px var(--theme-color-glow);
+    transform: scale(0.9);
+    transition: transform var(--transition-normal);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content.modal-wide {
+    max-width: 760px;
+    text-align: left;
+}
+
+.modal-content.modal-wide h2 {
+    margin-bottom: 0.5rem;
+}
+
+.guide-lead,
+.guide-note {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.about-grid article {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+}
+
+.about-grid h3 {
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.45;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.how-to-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+}
+
+.how-to-grid article {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 0.9rem 1rem;
+}
+
+.how-to-grid h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+}
+
+.how-to-grid p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.modal-wide .btn {
+    display: inline-flex;
+}
+
+@media (min-width: 700px) {
+    .how-to-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-badge-unlocked {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    animation: bounce-rotate 1.5s infinite ease-in-out;
+}
+
+/* Feedback panel (Correct / Incorrect overlay/banner) */
+.feedback-panel {
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    display: none;
+    animation: slide-up var(--transition-normal);
+}
+
+.feedback-panel.correct {
+    display: block;
+    background-color: var(--color-correct-glow);
+    border: 1px solid var(--color-correct);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
+}
+
+.feedback-panel.incorrect {
+    display: block;
+    background-color: var(--color-incorrect-glow);
+    border: 1px solid var(--color-incorrect);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.1);
+}
+
+.feedback-title {
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feedback-panel.correct .feedback-title {
+    color: var(--color-correct);
+}
+
+.feedback-panel.incorrect .feedback-title {
+    color: var(--color-incorrect);
+}
+
+.feedback-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+/* Keyframes */
+@keyframes badge-unlock-pulse {
+    0% {
+        box-shadow: 0 4px 15px var(--theme-color-glow);
+    }
+    100% {
+        box-shadow: 0 4px 25px rgba(255, 255, 255, 0.1), 0 0 15px var(--theme-color);
+    }
+}
+
+@keyframes bounce-rotate {
+    0%, 100% {
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) scale(1.1) rotate(8deg);
+    }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
